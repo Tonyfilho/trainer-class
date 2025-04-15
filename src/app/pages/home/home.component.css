@@ -1,0 +1,74 @@
+/* .img {
+  max-width: 100%;
+  min-height: 75vh;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: center;
+} */
+
+/* 
+
+.welcome-container {
+  width: 100vw;
+  height: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./../../../asset/img/backgrounds/01_Background2.png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.welcome-title {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3); 
+  border-radius: 10px;
+} */
+
+
+.welcome-container {
+    width: 100vw;
+    height: 75vh; /* Use viewport height para ocupar toda a altura */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    margin: 0; /* Remove margens padrão */
+    padding: 0; /* Remove paddings padrão */
+  }
+  
+  .welcome-title {
+    color: white;
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  /* Media Queries para ajustes específicos */
+@media (max-width: 768px) {
+    .welcome-container {
+        background-attachment: scroll; /* Remove parallax em mobile */
+    }
+    
+    .welcome-title {
+        padding: 15px;
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-title {
+        padding: 10px;
+        font-size: 1.5rem;
+        width: 95%;
+    }
+}
