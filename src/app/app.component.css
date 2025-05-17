@@ -21,7 +21,7 @@ app-header {
 }
 
 /* Conteúdo principal */
-main {
+app-main {
   flex: 1;
   min-height: 75vh;
   display: flex;
