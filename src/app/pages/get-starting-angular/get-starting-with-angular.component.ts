@@ -12,8 +12,8 @@ export class GetStartingWithAngularComponent {
   @ViewChild('pdfContent') content!: ElementRef;
 
   downloadPDF() {
-    const options = {
-      filename: 'get-starting-with-angular-guia.pdf',
+    const options: any = {
+      filename: 'starting environment at angular-guia.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
       jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }

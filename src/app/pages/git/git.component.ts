@@ -12,7 +12,7 @@ export class GitComponent {
   @ViewChild('pdfContent') content!: ElementRef;
 
   downloadPDF() {
-    const options = {
+    const options :any  = {
       filename: 'git-guia.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { scale: 2 },
