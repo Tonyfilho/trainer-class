@@ -21,9 +21,12 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/favicon.ico",
+              "src/assets",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets/favicon_io",
+                "output": "/assets/favicon_io"
               }
             ],
             "styles": [
@@ -78,10 +81,13 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
+       "assets": [
+              "src/favicon.ico",
+              "src/assets",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "src/assets/favicon_io",
+                "output": "/assets/favicon_io"
               }
             ],
             "styles": [
