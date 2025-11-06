@@ -1,0 +1,67 @@
+<div class="header">
+  <h1>Getting Started with Angular</h1>
+  <p class="subtitle">
+    A quick guide to help you set up your Angular development environment.
+  </p>
+</div>
+<div class="card right-align">
+  <button class="home-button" routerLink="/">Go Back to Home</button>
+  <button class="home-button-pdf" (click)="downloadPDF()">📄 Download PDF</button>
+</div>
+<section class="container-guide" #pdfContent>
+  <div class="content-wrap">
+
+    <article>
+      <p>
+        Congratulations on starting your Angular journey! Angular is a powerful platform for building web applications.
+        This application demonstrates the core features of Angular with a responsive design.
+      </p>
+
+      <h2>Angular Setup Guide</h2>
+
+      <section class="topic">
+        <h3>1. Install Prerequisites</h3>
+        <p>Before creating an Angular project, you need to install:</p>
+        <ul>
+          <li><strong>NVM for Windows:</strong>
+            <a href="https://github.com/coreybutler/nvm-windows" target="_blank" rel="noopener">https://github.com/coreybutler/nvm-windows</a>
+          </li>
+          <li><strong>Node.js</strong> (version 18 or later) – includes npm or better.</li>
+          <li><strong>npm</strong> (Node Package Manager) or <strong>yarn</strong>.</li>
+          <li><strong>TypeScript:</strong> Install with</li>
+        </ul>
+        <pre><code>npm install typescript --save-dev</code></pre>
+        <p>More info at
+          <a href="https://www.typescriptlang.org/download/" target="_blank" rel="noopener">typescriptlang.org</a>
+        </p>
+      </section>
+
+      <section class="topic">
+        <h3>2. Install Angular CLI</h3>
+        <p>Open your terminal and run the following command:</p>
+        <pre><code>npm install -g {{"@angular/cli"}}</code></pre>
+        <p>Verify the installation with:</p>
+        <pre><code>ng --version</code></pre>
+      </section>
+
+      <section class="topic">
+        <h3>3. Create a New Project</h3>
+        <p>Generate your Angular application using:</p>
+        <pre><code>ng new my-angular-app</code></pre>
+      </section>
+
+      <section class="topic">
+        <h3>4. Run the Application</h3>
+        <p>Navigate to your project folder and start the development server:</p>
+        <pre><code>cd my-angular-app
+ng serve --open</code></pre>
+        <p>Your app will automatically open in your default browser at:</p>
+        <pre><code>http://localhost:4200/</code></pre>
+      </section>
+
+      <div class="note tip">
+        💡 Pro Tip: Use Angular CLI commands to generate components, services, and modules faster!
+      </div>
+    </article>
+  </div>
+</section>
