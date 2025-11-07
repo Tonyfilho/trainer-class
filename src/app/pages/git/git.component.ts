@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import html2pdf from 'html2pdf.js';
+import { WatermarkService } from '../../_service/watermark.service';
 
 @Component({
   selector: 'app-git',
@@ -11,7 +12,16 @@ import html2pdf from 'html2pdf.js';
 export class GitComponent {
   @ViewChild('pdfContent') content!: ElementRef;
 
+   constructor(private watermarkService: WatermarkService) {}
+
+  ngOnInit(): void {
+ 
+  }
+
+
+
   downloadPDF() {
+    this.watermarkService.initializeProtection();
     const options :any  = {
       filename: 'git-guia.pdf',
       image: { type: 'jpeg', quality: 0.98 },
