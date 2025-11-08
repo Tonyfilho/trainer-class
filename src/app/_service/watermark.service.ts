@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
+import { ElementRef, Injectable } from '@angular/core';
+import html2pdf from 'html2pdf.js';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class WatermarkService {
-  private ebookUrl = "https://ebook-angular-dev-hit.web.app/";
+  private ebookUrl = 'https://ebook-angular-dev-hit.web.app/';
   private watermarkActive = false;
 
-  constructor() { }
+  constructor() {}
 
   createWatermark(): void {
     const watermark = document.getElementById('watermark');
@@ -46,7 +47,7 @@ export class WatermarkService {
 
   activateWatermark(): void {
     const watermark = document.getElementById('watermark');
-    if (watermark ) {
+    if (watermark) {
       watermark.classList.add('active');
       this.watermarkActive = true;
     }
@@ -109,7 +110,7 @@ export class WatermarkService {
 
   private detectDevTools(): void {
     // Detecção básica de DevTools
-    const devToolsCheck = function() {};
+    const devToolsCheck = function () {};
     devToolsCheck.toString = () => {
       this.showProtectionMessage();
       this.activateWatermark();
@@ -117,4 +118,11 @@ export class WatermarkService {
     };
     console.log('%c', devToolsCheck);
   }
+
+
+
+
+
+
+
 }
