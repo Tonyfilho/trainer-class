@@ -6,6 +6,9 @@ export class WatermarkAppService {
   private _showWatermark = new BehaviorSubject<boolean>(false);
   showWatermark$ = this._showWatermark.asObservable();
 
+  private _showOverlay = new BehaviorSubject<boolean>(false);
+  showOverlay$ = this._showOverlay.asObservable();
+
   private _texts: string[] = Array(25).fill('www.tonyfilho-cv.com');
 
   constructor() {
@@ -16,17 +19,19 @@ export class WatermarkAppService {
     return this._texts;
   }
 
-  /** Ativa a marca d'água */
-  activate() {
+  private activate() {
+    this._showOverlay.next(true);
     this._showWatermark.next(true);
 
-    // Desativa após alguns segundos (tempo do fade)
-    setTimeout(() => this._showWatermark.next(false), 150000);
+    // Desativa após alguns segundos
+    setTimeout(() => {
+      this._showOverlay.next(false);
+      this._showWatermark.next(false);
+    }, 10000);
   }
 
-  /** Configura eventos de proteção */
   private setupListeners() {
-    // Ctrl + P (impressão)
+    // Ctrl+P
     document.addEventListener('keydown', (e: KeyboardEvent) => {
       if (e.ctrlKey && e.key.toLowerCase() === 'p') {
         e.preventDefault();
@@ -34,15 +39,13 @@ export class WatermarkAppService {
       }
     });
 
-    // beforeprint (menu do navegador)
+    // beforeprint
     window.addEventListener('beforeprint', () => this.activate());
 
-    // Detectar perda de foco da janela (possível PrintScreen)
+    // Perda de foco (Print Screen)
     window.addEventListener('blur', () => {
-      // Pequeno delay para evitar falsos positivos
-      setTimeout(() => {
-        this.activate();
-      }, 0);
+      // ativa instantaneamente o overlay
+      this.activate();
     });
   }
 }

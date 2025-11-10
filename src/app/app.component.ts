@@ -1,29 +1,32 @@
-
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+
+import { Observable } from 'rxjs';
 import { WatermarkAppService } from './_service/watermark.service';
 import { HeaderComponent } from "./components/_header/header.component";
 import { MainComponent } from "./components/main/main.component";
 import { FooterComponent } from "./components/footer/footer.component";
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  imports: [HeaderComponent, MainComponent, FooterComponent]
+  imports: [HeaderComponent, MainComponent, FooterComponent, CommonModule]
 })
 export class AppComponent implements OnInit {
-  showWatermark = false;
+  // Observables que o template vai assinar
+  showWatermark$: Observable<boolean>;
+  showOverlay$: Observable<boolean>;
   texts: string[] = [];
-   Math = Math; // 👈 expõe o objeto Math para o template
 
-  constructor(private watermarkService: WatermarkAppService) {}
+  constructor(private watermarkService: WatermarkAppService) {
+    // Inicializa os Observables
+    this.showWatermark$ = this.watermarkService.showWatermark$;
+    this.showOverlay$ = this.watermarkService.showOverlay$;
+  }
 
-  ngOnInit() {
-    // Observa mudanças no BehaviorSubject
-    this.watermarkService.showWatermark$.subscribe(show => {
-      this.showWatermark = show;
-      this.texts = this.watermarkService.texts;
-    });
+  ngOnInit(): void {
+    // Copia os textos do serviço para exibir no template
+    this.texts = this.watermarkService.texts;
   }
 }
