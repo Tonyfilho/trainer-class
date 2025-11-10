@@ -21,7 +21,7 @@ export class WatermarkAppService {
     this._showWatermark.next(true);
 
     // Desativa após alguns segundos (tempo do fade)
-    setTimeout(() => this._showWatermark.next(false), 4000);
+    setTimeout(() => this._showWatermark.next(false), 150000);
   }
 
   /** Configura eventos de proteção */
@@ -32,15 +32,17 @@ export class WatermarkAppService {
         e.preventDefault();
         this.activate();
       }
-
-      // Print Screen
-      if (e.key === 'PrintScreen') {
-        e.preventDefault();
-        this.activate();
-      }
     });
 
-    // beforeprint (Ctrl+P direto via menu)
+    // beforeprint (menu do navegador)
     window.addEventListener('beforeprint', () => this.activate());
+
+    // Detectar perda de foco da janela (possível PrintScreen)
+    window.addEventListener('blur', () => {
+      // Pequeno delay para evitar falsos positivos
+      setTimeout(() => {
+        this.activate();
+      }, 0);
+    });
   }
 }
