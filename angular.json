@@ -5,7 +5,20 @@
   "projects": {
     "trainer-class": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -81,7 +94,7 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
-       "assets": [
+            "assets": [
               "src/favicon.ico",
               "src/assets",
               {
