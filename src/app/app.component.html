@@ -1,33 +1,21 @@
-<!-- <body>
-  <div class="header">
-    <app-header></app-header>
-  </div>
-  <div class="main">
-    <app-main></app-main>
-  </div>
-  <div class="footer">
-    <app-footer></app-footer>
-  </div>
-</body> -->
 <div class="body">
-  <!-- Componentes existentes -->
-  <div class="header"><app-header></app-header></div>
-  <div class="main"><app-main></app-main></div>
-  <div class="footer"><app-footer></app-footer></div>
+  <div class="header"><app-header /></div>
+  <div class="main"><app-main /></div>
+  <div class="footer"><app-footer /></div>
 
-  <!-- Marca d'água (sempre presente, mas invisível por padrão) -->
-  <div class="watermark" id="watermark"></div>
-
-  <!-- Mensagem de proteção -->
-  <div class="protection-message" id="protectionMessage">
-    <div class="message-content">
-      <h3>Proteção contra Cópia</h3>
-      <p>Este conteúdo é protegido por direitos autorais.</p>
-      <p>Nunca Print ou Ctlr + P. Disparará o protetor de copias.</p>
-      <p>Use o ESC para esconder a mensagem.</p>
-      <p>Para adquirir o ebook completo user a opção imprimir PDF. Visite para ver outros:</p>
-      <p class="ebook-link"><strong>https://ebook-angular-dev-hit.web.app/</strong></p>
-      <button class="btn-close" (click)="closeProtectionMessage()">Entendi</button>
+  @if (showWatermark) {
+    <div class="watermark fade">
+      @for (text of texts; track $index) {
+        <div
+          class="watermark-text"
+          [style.top.%]="Math.random() * 100"
+          [style.left.%]="Math.random() * 100"
+          [style.transform]="'rotate(' + (-40 + Math.random() * 80) + 'deg)'"
+        >
+          {{ text }}
+        </div>
+      }
     </div>
-  </div>
+  }
 </div>
+
