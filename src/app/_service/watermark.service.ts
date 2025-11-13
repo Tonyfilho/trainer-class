@@ -9,7 +9,7 @@ export class WatermarkAppService {
   private _showOverlay = new BehaviorSubject<boolean>(false);
   showOverlay$ = this._showOverlay.asObservable();
 
-  private _texts: string[] = Array(25).fill('www.tonyfilho-cv.com');
+  private _texts: string[] = Array(25).fill('https://www.linkedin.com/in/tony-filho-238238233/');
 
   constructor() {
     this.setupListeners();
