@@ -32,7 +32,7 @@ export class PdfService {
         .then((canvas: HTMLCanvasElement) => {
           // 1) desenha watermark repetida/padrão no canvas
           this.drawRepeatedWatermarkOnCanvas(canvas, {
-            text: 'https://www.linkedin.com/in/tony-filho-238238233/',
+            text: 'https://github.com/Tonyfilho',
             repeatSpacingX: 300,   // espaçamento em px do padrão (ajusta conforme necessário)
             repeatSpacingY: 220,
             smallAlpha: 0.14,
