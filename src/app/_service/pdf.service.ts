@@ -36,7 +36,7 @@ export class PdfService {
             repeatSpacingX: 300,   // espaçamento em px do padrão (ajusta conforme necessário)
             repeatSpacingY: 220,
             smallAlpha: 0.14,
-            smallFontPx: 32,
+            smallFontPx: 22,
             centralText: 'EBOOK - TONY FILHO',
             centralAlpha: 0.06,
             centralFontPx: 160,
