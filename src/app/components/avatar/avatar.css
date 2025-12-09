@@ -1,0 +1,103 @@
+.avatar-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* ÁREA PRINCIPAL */
+.avatar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: var(--border-radius);
+  background-color: var(--background-color-avatar);
+  color: var(--text-color-light);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 100%;
+}
+
+.avatar:hover {
+  background-color: var(--background-color-avatar-hover);
+}
+
+/* IMAGEM */
+.avatar-image {
+  width: 76px;
+  height: 76px;
+  min-width: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+}
+
+/* NOME */
+.avatar-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* MENU */
+.avatar-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: #fff;
+  min-width: 140px;
+  padding: 6px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  display: none;
+  z-index: 1000;
+}
+
+.avatar:hover .avatar-menu,
+.avatar:focus-within .avatar-menu {
+  display: block;
+}
+
+.avatar-menu button {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 8px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+  border-radius: var(--border-radius);
+}
+
+
+/* ---------------- RESPONSIVIDADE ---------------- */
+
+/* TABLET */
+@media (max-width: 768px) {
+  .avatar {
+    padding: 6px;
+    gap: 6px;
+  }
+
+  .avatar-name {
+    font-size: 0.85rem;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  /* Esconde nome no mobile */
+  .avatar-name {
+    display: none;
+  }
+
+  .avatar {
+    padding: 6px;
+  }
+
+  .avatar-menu {
+    right: 0;
+    min-width: 120px;
+  }
+}

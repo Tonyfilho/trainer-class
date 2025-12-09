@@ -1,0 +1,26 @@
+@if(localUser | async; as user){
+
+  <div class="avatar-wrapper" >
+    <div class="avatar" tabindex="0">
+      <img
+        class="avatar-image"
+        [src]="user.photoURL ?? './../../../assets/img/avatar/no_avatar.png'"
+        alt="Foto do usuário"
+      />
+
+      <span class="avatar-name">
+        {{ user.displayName || user.email }}
+      </span>
+
+      <div class="avatar-menu">
+        <button (click)="authGmailService.logOut()">
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+
+}
+
+
+
