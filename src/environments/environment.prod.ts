@@ -4,13 +4,12 @@ export const environment = {
   production: true,
   firebaseConfig: {
     apiKey: keys.firebaseApiKey,
-    authDomain: "ebook-angular-dev-hit.firebaseapp.com",
-    projectId: "ebook-angular-dev-hit",
-    storageBucket: "ebook-angular-dev-hit.firebasestorage.app",
-    messagingSenderId: "576636567121",
-    appId: "1:576636567121:web:559d4455700fc9bdc74270"
+   authDomain: "ebook-front-grid-flex.firebaseapp.com",
+  projectId: "ebook-front-grid-flex",
+  storageBucket: "ebook-front-grid-flex.firebasestorage.app",
+  messagingSenderId: "8851151446",
+  appId: "1:8851151446:web:a3cb2bbb06250767db79f7"
   },
-  weatherKey: keys.weatherKey,
-  reqresKey: keys.reqresKey
+
 
 }
