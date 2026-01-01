@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthGmailService } from '../../_service/auth-gmail.service';
 import { User } from 'firebase/auth';
+import { AuthStateService } from '../../_service/auth/auth-state.service';
 
 @Component({
   selector: 'app-avatar',
@@ -12,11 +12,15 @@ import { User } from 'firebase/auth';
 })
 export class Avatar {
 
-  protected authGmailService = inject(AuthGmailService);
-  // protected localUser: Observable<User | null> = this.authGmailService.getUser();
-  protected localUser: Observable<User | null> = this.authGmailService.getUser();
+
+protected authStateService = inject(AuthStateService);
+// protected localUser: Observable<User | null> = this.authGmailService.getUser();
+protected localUser: Observable<User | null> = this.authStateService.getUser();
 
 
 
+logOut() {
+throw new Error('Method not implemented.');
+}
 
 }
