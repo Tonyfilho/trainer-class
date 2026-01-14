@@ -1,0 +1,57 @@
+<section class="not-found">
+  <!-- Botão voltar -->
+  <button
+    class="back-button"
+    routerLink="/"
+    aria-label="Voltar para a página inicial"
+  >
+    <span class="material-icons">home</span>
+    Início
+  </button>
+
+  <!-- Cena -->
+  <div class="scene">
+    <!-- Estrelas -->
+    @for (star of stars; track $index) {
+      <span
+        class="star"
+        [ngStyle]="{
+          left: star.left,
+          top: star.top,
+          width: star.size,
+          height: star.size,
+          opacity: star.opacity
+        }"
+      ></span>
+    }
+
+    <!-- Conteúdo central -->
+    <div class="content">
+      <!-- Astronauta -->
+      <div class="astronaut">
+        <img
+          src="assets/img/astronauta/astronauta2.png"
+          alt="Astronauta flutuando no espaço"
+
+
+        />
+      </div>
+
+      <!-- Mensagem -->
+      <div class="message">
+        <h1 class="error-code">404</h1>
+        <h2 class="error-title">Página Perdida no Espaço</h2>
+        <p class="error-message">
+          Ops! Parece que você flutuou para muito longe.
+          Esta página foi engolida por um buraco negro.
+        </p>
+      </div>
+
+      <!-- Planeta -->
+      <div class="planet">
+        <span class="crater small"></span>
+        <span class="crater large"></span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -9,4 +9,4 @@ npm install html2pdf.js
 
 npm install firebase
 
-npm install firebase @angular/fire ou  ng add @angular/fire
+npm install @angular/fire ou  ng add @angular/fire

@@ -24,8 +24,8 @@ export const routes: Routes = [
   {
     path: '**',
     loadComponent: () =>
-      import('./pages/_wellcome/wellcome.component').then(
-        (c) => c.WellcomeComponent
+      import('./pages/not-found/not-found').then(
+        (c) => c.NotFound
       ),
   },
   // Adicione outras rotas aqui
