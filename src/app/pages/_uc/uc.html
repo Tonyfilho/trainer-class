@@ -1,0 +1,192 @@
+<div class="header">
+  <h1>UF 9982 — Programação de Scripts</h1>
+  <p class="subtitle">
+    Aplicar linguagens de scripting em contexto web,
+    integrando scripts em páginas dinâmicas,
+    utilizando o modelo de objetos do documento (DOM),
+    eventos, programação assíncrona e frameworks modernos como Angular.
+  </p>
+</div>
+
+<div class="card right-align">
+  <button class="home-button" routerLink="/">Voltar para Home</button>
+  <button class="home-button-pdf" (click)="downloadPDF()">📄 Download PDF</button>
+</div>
+
+<section class="container-guide" #pdfContent>
+  <div class="content-wrap">
+
+    <article>
+
+      <h2>O que é Programação de Scripts?</h2>
+      <p>
+        A <strong>programação de scripts</strong> consiste na utilização de linguagens interpretadas,
+        orientadas a eventos e focadas no comportamento dinâmico das aplicações.
+        No contexto web, o JavaScript (ECMAScript) permite manipular dados,
+        responder a eventos do utilizador e criar interfaces interativas.
+      </p>
+
+      <p>
+        Nesta UFCD, os conceitos de scripting são aplicados diretamente
+        em páginas web modernas, utilizando o <strong>Angular</strong> como framework,
+        evitando a manipulação direta do DOM e adotando boas práticas de desenvolvimento.
+      </p>
+
+      <h2>Conteúdos Programáticos</h2>
+      <ul>
+        <li><strong>Linguagens de scripting:</strong> Características, vantagens e contexto web.</li>
+        <li><strong>DOM:</strong> Modelo de Objetos do Documento e interação com a interface.</li>
+        <li><strong>Strings e dados:</strong> Métodos de string, interpolação e filtragem.</li>
+        <li><strong>Angular:</strong> Event Binding, Property Binding e Interpolação.</li>
+        <li><strong>Páginas dinâmicas:</strong> Ciclo de vida do componente e manipulação de dados.</li>
+        <li><strong>Programação assíncrona:</strong> Promise, Observable e RxJS.</li>
+      </ul>
+
+      <h2>Duração e Avaliação</h2>
+      <p>
+        A UFCD possui duração de <strong>25 horas</strong>,
+        com avaliação contínua baseada na realização de exercícios práticos
+        e desenvolvimento progressivo de scripts em Angular.
+      </p>
+
+      <hr class="divider" />
+
+      <h2>📚 Plano de Aulas — UF 9982</h2>
+
+      <ol class="lesson-plan">
+
+        <!-- AULA 01 -->
+        <br>
+        <strong>Aula 01 — Linguagens de Scripting e DOM (Teórica):</strong>
+        <br />
+        <li>
+        Criação do Projeto uc-ufcd9982 e do Projeto exercicio.
+        Obs: O Projeto exercicio será usado para todos os exercícios práticos.
+
+        Caracterização das linguagens de scripting.
+        Introdução ao ECMAScript.
+        Conceito e estrutura do Modelo de Objetos do Documento (DOM).
+        Relação entre HTML, DOM e comportamento dinâmico.
+        </li>
+
+        <li>
+          <strong>Exercício da Aula 01 (Pesquisa):</strong>
+          <br />
+          Fazer uma Pesquisa em Grupo sobre:
+          <ul>
+            <li>O que é ECMAScript e a sua importância no JavaScript moderno;</li>
+            <li>O que é o DOM e como ele representa uma página web;</li>
+            <li>Diferença entre manipulação direta do DOM e uso de frameworks como Angular.</li>
+          </ul>
+        </li>
+
+        <!-- AULA 02 -->
+        <li>
+          <strong>Aula 02 — Strings, Interpolação e Integração de Scripts:</strong>
+          <br />
+          Métodos de string mais utilizados.
+          Filtragem de dados textuais.
+          Interpolação de strings.
+          Integração de scripts em páginas Angular.
+          Introdução ao Event Binding, Property Binding e Interpolação no template.
+        </li>
+
+        <li>
+          <strong>Exercício da Aula 02:</strong>
+          <br />
+          No projeto <strong>exercicio</strong>,
+          criar um componente chamado <strong>exercicio02</strong> e aplicar o que foi aprendido na aula02
+          <ul>
+            <li>Entrada de texto pelo utilizador;</li>
+            <li>Processamento usando métodos de string;</li>
+            <li>Apresentação dinâmica dos resultados usando interpolação e property binding no console.log().</li>
+          </ul>
+        </li>
+
+        <!-- AULA 03 -->
+        <li>
+          <strong>Aula 03 — Eventos do DOM e Páginas Dinâmicas:</strong>
+          <br />
+          Eventos do DOM no Angular.
+          Eventos de botões e formulários.
+          Criação de páginas dinâmicas.
+          Ciclo de vida do componente:
+          construtor, <code>ngOnInit</code> e <code>ngOnDestroy</code>.
+          Uso de <code>forEach</code> e operador <code>rest</code>.
+        </li>
+
+        <li>
+          <strong>Exercício da Aula 03:</strong>
+          <br />
+           criar um componente chamado <strong>exercicio03</strong> e aplicar o que foi aprendido na aula03
+          No projeto <strong>exercicio</strong>,
+          criar uma página dinâmica com:
+          <ul>
+            <li>Lista de dados apresentada dinamicamente;</li>
+            <li>Botões com eventos para adicionar e remover itens;</li>
+            <li>Inicialização dos dados no <code>ngOnInit</code>.</li>
+          </ul>
+        </li>
+
+        <!-- AULA 04 -->
+        <li>
+          <strong>Aula 04 — Programação Assíncrona e RxJS:</strong>
+          <br />
+          Conceito de programação assíncrona.
+          Promise vs Observable.
+          Introdução ao RxJS.
+          Operadores RxJS mais utilizados:
+          <code>map</code>, <code>filter</code>, <code>tap</code>,
+          <code>switchMap</code> e <code>catchError</code>.
+        </li>
+
+        <li>
+          <strong>Exercício da Aula 04:</strong>
+          <br />
+            criar um componente chamado <strong>exercicio04</strong> e aplicar o que foi aprendido na aula04
+          No projeto <strong>exercicio</strong>,
+          simular uma fonte de dados assíncrona usando Observable,
+          aplicar operadores RxJS e apresentar os dados dinamicamente no componente.
+        </li>
+
+                <!-- AULA 05 -->
+
+        <li>
+          <strong>Aula 05 — Arrays e Métodos Mais Utilizados:</strong>
+          <br />
+          Manipulação de coleções de dados.
+          Métodos de array mais usados:
+          <code>map</code>, <code>filter</code>, <code>find</code>,
+          <code>reduce</code> e <code>some</code>.
+          Aplicação prática em componentes Angular.
+        </li>
+
+        <li>
+          <strong>Exercício da Aula 05:</strong>
+          <br />
+            criar um componente chamado <strong>exercicio05</strong> e aplicar o que foi aprendido na aula05
+          No projeto <strong>exercicio</strong>,
+          criar uma lista de objetos e aplicar:
+          <ul>
+            <li>Filtragem de dados;</li>
+            <li>Transformação de listas;</li>
+            <li>Cálculos simples com <code>reduce</code>.</li>
+          </ul>
+        </li>
+
+      </ol>
+
+      <div class="note info">
+        ℹ️ No final da UFCD, o formando terá:
+        <ul>
+          <li>✅ Compreensão sólida sobre linguagens de scripting e DOM.</li>
+          <li>✅ Capacidade de integrar scripts em páginas Angular.</li>
+          <li>✅ Experiência com eventos, programação assíncrona e RxJS.</li>
+          <li>✅ Um projeto prático de exercícios desenvolvido autonomamente.</li>
+        </ul>
+      </div>
+
+    </article>
+
+  </div>
+</section>

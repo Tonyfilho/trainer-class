@@ -1,0 +1,174 @@
+<div class="header">
+  <h1>
+    <a href="https://catalogo.anqep.gov.pt/ufcdDetalhe/12675" target="_blank">
+      UFCD 9982 — Programação de Scripts
+    </a>
+  </h1>
+
+  <p class="subtitle">
+    Aula 01 — Linguagens de Scripting, ECMAScript e DOM
+  </p>
+</div>
+
+<div class="card right-align">
+  <button class="home-button" routerLink="/">Voltar para Home</button>
+  <button class="home-button-pdf" (click)="downloadPDF()">📄 Download PDF</button>
+</div>
+
+<section class="container-guide" #pdfContent>
+  <div class="content-wrap">
+
+    <h2>🧩 Aula 01 — Linguagens de Scripting e Modelo de Objetos do Documento</h2>
+
+    <!-- OBJETIVO -->
+    <h3>🎯 Objetivo da Aula</h3>
+    <p>
+      Compreender o conceito de <strong>linguagens de scripting</strong>,
+      a sua aplicação no contexto web moderno e a importância do
+      <strong>ECMAScript</strong> como norma do JavaScript.
+      Introduzir o <strong>Modelo de Objetos do Documento (DOM)</strong>,
+      explicando como uma página web é representada internamente e
+      preparada para interação dinâmica.
+    </p>
+
+    <div class="note info">
+      <ul>
+        <li>Caracterizar linguagens de scripting</li>
+        <li>Compreender o papel do ECMAScript no JavaScript</li>
+        <li>Identificar o que é o DOM e como ele funciona</li>
+        <li>Relacionar HTML, DOM e comportamento dinâmico</li>
+      </ul>
+    </div>
+
+    <!-- LINGUAGEM DE SCRIPTING -->
+    <h3>📜 O que são Linguagens de Scripting?</h3>
+    <p>
+      Linguagens de scripting são linguagens de programação
+      <strong>interpretadas</strong>, geralmente utilizadas para
+      automatizar tarefas e controlar o comportamento dinâmico de aplicações.
+      No contexto web, permitem reagir a eventos do utilizador,
+      manipular dados e atualizar interfaces sem recarregar a página.
+    </p>
+
+    <div class="note info">
+      Características principais:
+      <ul>
+        <li>Execução interpretada</li>
+        <li>Forte integração com o ambiente de execução (browser)</li>
+        <li>Orientação a eventos</li>
+        <li>Rapidez no desenvolvimento</li>
+      </ul>
+    </div>
+
+    <!-- ECMASCRIPT -->
+    <h3>🌐 ECMAScript e JavaScript</h3>
+    <p>
+      <strong>ECMAScript</strong> é a especificação que define as regras,
+      sintaxe e funcionalidades da linguagem JavaScript.
+      Os navegadores modernos implementam esta norma,
+      garantindo compatibilidade e evolução contínua da linguagem.
+    </p>
+
+    <div class="note info">
+      <ul>
+        <li>JavaScript segue o padrão ECMAScript</li>
+        <li>Novas versões trazem melhorias e novas funcionalidades</li>
+        <li>Frameworks como Angular baseiam-se em ECMAScript moderno</li>
+      </ul>
+    </div>
+
+    <!-- DOM -->
+    <h3>🌳 Modelo de Objetos do Documento (DOM)</h3>
+    <p>
+      O <strong>DOM</strong> é uma representação em forma de árvore
+      de todos os elementos de uma página web.
+      Cada elemento HTML torna-se um objeto que pode ser
+      lido, alterado ou associado a eventos através de scripts.
+    </p>
+
+    <div class="note info">
+      O DOM permite que scripts:
+      <ul>
+        <li>Leiam e alterem conteúdos HTML</li>
+        <li>Modifiquem estilos dinamicamente</li>
+        <li>Reajam a ações do utilizador</li>
+      </ul>
+    </div>
+
+    <!-- EXEMPLO CONCEITUAL -->
+    <h3>📦 Representação Conceitual do DOM</h3>
+
+    <div class="code-example">
+      <pre><code>
+document
+ └── html
+     ├── head
+     └── body
+         ├── h1
+         └── p
+      </code></pre>
+    </div>
+
+    <p>
+      Cada nó da árvore representa um elemento da página,
+      permitindo interação dinâmica através de scripts.
+    </p>
+
+    <!-- DOM E ANGULAR -->
+    <h3>🅰️ DOM e Angular</h3>
+    <p>
+      Em aplicações Angular, a manipulação direta do DOM
+      <strong>não é recomendada</strong>.
+      O framework fornece mecanismos como
+      <strong>interpolação, property binding e event binding</strong>,
+      abstraindo o acesso direto ao DOM e garantindo
+      melhor desempenho e organização do código.
+    </p>
+
+    <div class="note info">
+      Angular trabalha com:
+      <ul>
+        <li>Templates declarativos</li>
+        <li>Atualização automática da interface</li>
+        <li>Separação entre lógica e apresentação</li>
+      </ul>
+    </div>
+
+    <!-- BOAS PRÁTICAS -->
+    <h3>✅ Boas Práticas Relacionadas ao DOM</h3>
+
+    <div class="note success">
+      <ul>
+        <li>Evitar manipulação direta do DOM</li>
+        <li>Utilizar mecanismos nativos do framework</li>
+        <li>Manter scripts organizados e legíveis</li>
+        <li>Separar estrutura, estilo e comportamento</li>
+      </ul>
+    </div>
+
+    <!-- CONCLUSÃO -->
+    <h3>📌 Conclusão da Aula 01</h3>
+    <p>
+      Nesta aula foram apresentados os conceitos fundamentais
+      das linguagens de scripting, a importância do ECMAScript
+      e o funcionamento do Modelo de Objetos do Documento.
+      Estes conhecimentos são essenciais para compreender
+      como scripts controlam o comportamento dinâmico das páginas web.
+    </p>
+
+    <div class="note success">
+      ✔️ Conceito de linguagens de scripting<br>
+      ✔️ Papel do ECMAScript no JavaScript moderno<br>
+      ✔️ Compreensão do DOM e sua relação com a interface
+    </div>
+
+    <h3>➡️ Próxima Aula</h3>
+    <p>
+      Na <strong>Aula 02</strong>, iremos aplicar estes conceitos,
+      trabalhando com <strong>strings, interpolação</strong> e
+      <strong>integração de scripts em páginas Angular</strong>,
+      iniciando a componente prática da UFCD.
+    </p>
+
+  </div>
+</section>
