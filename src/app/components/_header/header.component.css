@@ -1,130 +1,249 @@
-/* header.component.scss */
 .header {
-    width: 100%;
-    min-height: max-content;
-    background-color: #d1caca;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-  }
-   /* Cabeçalho local */
-   .local-header {
-    position: relative;
-    width: 100%;
-    background: linear-gradient(135deg, #6e8efb, #a777e3);
-    color: white;    
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .local-header-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem .5rem;
-    text-align: center;
-  }
-  
+  width: 100%;
+  min-height: max-content;
+  background-color: var(--background-color-sections2);
+  box-shadow: var(--shadow);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+
+.local-header {
+  position: relative;
+  width: 100%;
+  color: var(--text-color-light);
+  box-shadow: var(--shadow);
+  background: var(--background-color-header);
+  background-size: var(--animation-background-size);
+  animation: var(--animation-move-gradient);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.local-header-content-left {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+.local-header-content {
+  max-width: 1200px;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.local-header-content h1 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.local-header-content p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.local-header-content-right {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1rem;
+}
+
+.nav-content {
+  min-height: 80px;
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: var(--background-color-sections2);
+  background-size: var(--animation-background-size);
+  animation: var(--animation-background-size);
+  height: max-content;
+}
+
+.logo-link {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--background-color-code);
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+
+.logo-link:hover {
+  color: var(--text-hover);
+  text-decoration: underline;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.has-expandable .submenu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.has-expandable:hover .submenu {
+  max-height: max-content;
+}
+
+.submenu-link {
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.submenu-link:hover {
+  background-color: var(--tr-hover);
+  color: var(--text-hover2);
+}
+
+
+
+/* container de bloco de submenu (pai + sub) */
+.submenu-block {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Ao passar mouse sobre o bloco todo, abre o submenu-sub */
+.submenu-block:hover .submenu-sub {
+  max-height: 1000px; /* grande o suficiente para todos os links */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* ajuste do submenu-sub com transição suave */
+.submenu-sub {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-5px);
+  transition: max-height 4s ease, opacity 0.4s ease, transform 4s ease;
+  padding-left: 1rem;
+}
+
+/* mantém a herança do estilo aprovado */
+.submenu-link {
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.submenu-link:hover {
+  background-color: var(--tr-hover);
+  color: var(--text-hover2);
+}
+
+/* Exibe o submenu-sub quando o mouse passa por cima do título anterior */
+.submenu a.logo-link:hover + .submenu-sub {
+  max-height: max-content;
+}
+
+@media (max-width: 1024px) {
   .local-header-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+    font-size: 2rem;
   }
-  
+
   .local-header-content p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    max-width: 800px;
-    margin: 0 auto;
+    font-size: 1.1rem;
+    max-width: 90%;
   }
 
   .nav-content {
-    max-width: 1200px;
-    min-height: 60px;
-    margin: 0 auto;
-    padding: 0 16px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    height: max-content;
     gap: 25px;
-    background-size: var(--animation-background-size);
-    animation: var(--animation-move-gradient);
+    flex-direction: row;
+    justify-content: center;
   }
-  
+
   .logo-link {
-    /* color: #333; */
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  
-    &:hover {
-      color: #007bff;
-    }
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
   }
-  
-  .spacer {
-    flex: 1;
-  }
-
-  .logo-link {    
-    font-family: inherit; /* Herda a fonte do elemento pai */
-    font-weight: 500; /* Peso médio para suavidade (não muito fino nem muito negrito) */
-    font-size: 1rem; /* Tamanho padrão ou ajuste conforme necessário */
-    letter-spacing: 0.5px; /* Pequeno espaçamento entre letras para melhor legibilidade */
-    line-height: 1.5; /* Espaçamento confortável entre linhas */
-    color: #333; /* Cor suave (ajuste para o tom desejado) */
-    text-decoration: none; /* Remove sublinhado padrão */
-    transition: all 0.3s ease; /* Transição suave para hover/focus */
-
-    /* Efeito suave ao interagir */
-    &:hover, &:focus {
-        color: #007bff; /* Cor azul suave no hover (pode ajustar) */
-        text-decoration: underline; /* Sublinhado sutil no hover */
-        text-underline-offset: 3px; /* Distância do sublinhado */
-        text-decoration-thickness: 1px; /* Espessura fina do sublinhado */
-    }
-
-    /* Melhoria para acessibilidade no foco */
-    &:focus {
-        outline: 2px solid rgba(0, 123, 255, 0.3);
-        outline-offset: 2px;
-    }
 }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    .header {
-      display: flex;
-      flex-wrap: wrap-reverse;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-  
 
-    }
-    .local-header-content {
-      max-height: 190px;
-    }
-    .nav-content {
-      max-height: 120px;
-      margin-top: 15%;
-    }
-    
-    .logo-link {
-      font-size: 1.25rem;
-    }
+@media (max-width: 768px) {
+  .local-header-content {
+    padding: 1rem;
   }
-  
-  @media (max-width: 480px) {
-    .nav-container {
-      padding: 0 12px;
-    }
-    
-    .logo-link {
-      font-size: 1.1rem;
-    }
+
+  .local-header-content h1 {
+    font-size: 1.8rem;
   }
+
+  .local-header-content p {
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .nav-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 1rem 0.5rem;
+  }
+
+  .nav-item {
+    width: 100%;
+    align-items: center;
+  }
+
+  .has-dropdown .dropdown,
+  .has-expandable .submenu {
+    position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .submenu-sub {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .dropdown-link,
+  .submenu-link {
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
+  }
+
+  .logo-link {
+    font-size: 1rem;
+    text-align: center;
+  }
+}

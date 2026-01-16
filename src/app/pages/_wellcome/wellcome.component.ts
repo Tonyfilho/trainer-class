@@ -7,7 +7,7 @@ import { Component, computed, signal } from '@angular/core';
   styleUrl: './wellcome.component.css',
 })
 export class WellcomeComponent {
-  courseCode = signal('UC... or UFCD...');
+  courseCode = signal('UC-UF5409');
   trainerName = signal('Tony');
 
   // Computed signal - atualiza automaticamente quando courseCode ou trainerName mudam
