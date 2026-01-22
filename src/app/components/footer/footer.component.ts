@@ -10,7 +10,6 @@ import { DateTime } from 'luxon';
 })
 export class FooterComponent {
 
-  protected  dateTime = DateTime.now();
-
+protected  dateTime = DateTime.now().toFormat('dd/MM/yyyy');
 
 }
